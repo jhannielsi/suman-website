@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>뉴스 - 수만</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/sumanlogo.png') }}">
+  <style>
+    /* Add specific styles for the news page */
+    .news-article {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .news-article h3 {
+      color: #c00;
+      margin-bottom: 10px;
+    }
+    .news-article p.date {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .news-article p {
+      line-height: 1.6;
+    }
+    .news {
+      padding: 60px 0;
+    }
+    .news h2 {
+      text-align: center;
+      font-size: 36px;
+      color: #c00;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-container">
+      <div class="logo"><a href="{{ url_for('index') }}">SUMAN</a></div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('introduction') }}">회사소개</a></li>
+          <li><a href="{{ url_for('products') }}">제품</a></li>
+          <li><a href="{{ url_for('solutions') }}">솔루션</a></li>
+          <li><a href="{{ url_for('news') }}" class="active">뉴스</a></li> {# Mark as active for the current page #}
+          <li><a href="{{ url_for('customer') }}">고객지원</a></li>
+          <li><a href="{{ url_for('contact') }}">문의하기</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="news">
+    <div class="container">
+      <h2>최신 뉴스</h2>
+
+      {% if articles %}
+        {% for article in articles %}
+          <div class="news-article">
+            <h3>{{ article.title }}</h3>
+            <p class="date">{{ article.date }}</p>
+            <p>{{ article.content }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>현재 등록된 뉴스가 없습니다.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 수만 Co., Ltd. 모든 권리 보유. | 서울특별시 강남구 | 연락처: 02-1234-5678</p>
+    </div>
+  </footer>
+
+</body>
+</html>

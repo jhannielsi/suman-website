@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Flask
+instance/
+.flaskenv
+
+# Operating System Files
+.DS_Store
+.vscode/ # If you use VS Code and want to ignore its settings
