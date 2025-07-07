@@ -112,7 +112,6 @@ nav ul li a:hover {
   font-size: 18px;
 }
 
-/* GRID STYLE (optional for products/solutions) */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -145,7 +144,6 @@ nav ul li a:hover {
   font-size: 16px;
 }
 .hero {
-  /* CHANGE 1: Correct path for bg.png */
   background: url('../images/bg.png') no-repeat center center/cover ;
   color: #fff;
   text-align: center;
@@ -265,7 +263,6 @@ footer {
   margin-top: 60px;
 }
 
-/* CHANGE 2: Add styles for flash messages (optional but recommended) */
 .flashes {
 list-style: none;
 padding: 10px 0;
